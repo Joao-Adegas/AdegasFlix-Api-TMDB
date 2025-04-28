@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "swiper": "^11.2.6",
+    "vite": "^6.3.2"
+  }
+}
