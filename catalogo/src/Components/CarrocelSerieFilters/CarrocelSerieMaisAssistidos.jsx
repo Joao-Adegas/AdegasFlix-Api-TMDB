@@ -52,8 +52,8 @@ export function CarrocelSerieMaisAssistidos() {
                         slidesPerView={6}
                         loop={false}
                         navigation={{
-                            prevEl: prevRef.current, // Ref para o botão "Anterior"
-                            nextEl: nextRef.current, // Ref para o botão "Próximo"
+                            prevEl: prevRef.current, 
+                            nextEl: nextRef.current, 
                         }}
                         onBeforeInit={(swiper) => {
                             swiper.params.navigation.prevEl = prevRef.current;
@@ -62,29 +62,29 @@ export function CarrocelSerieMaisAssistidos() {
                         modules={[Navigation]}
                     >
                         {series.map(serie => (
+                            //verifica se possui imagem, para a imagem ser carregada
+                            serie.backdrop_path &&(
                             <SwiperSlide key={serie.id}>
                                 <img
                                     src={`https://image.tmdb.org/t/p/w500${serie.backdrop_path}`}
                                     alt={serie.title}
-                                    className="rounded-lg 
-                                    shadow-lg 
+                                    className="
+                                    group 
+                                    rounded-lg shadow-lg 
                                     w-[50rem] h-[auto] 
-                                    transition-transform 
-                                    duration-500 
+                                    transition-transform duration-500 
                                     hover:opacity-45 hover:cursor-pointer "
                                 />
-                                <div className="w-[12rem]"> 
-                                        <h3 className="relative 
-                                        bottom-10 left-2.5 
-                                        text-white 
-                                        font-extrabold 
-                                        flex-wrap 
-                                        truncate 
-                                        ls:text-[1.2rem]">
-                                            {serie.title}
-                                        </h3>
+                                <div className="w-[15rem]"> 
+                                    <h3 className="
+                                    relative bottom-10 left-2.5 
+                                    text-white font-extrabold 
+                                    flex-wrap truncate text-[1.2rem]">
+                                        {serie.title}
+                                    </h3>
                                 </div>
                             </SwiperSlide>
+                            )
                         ))}
                     </Swiper>
 

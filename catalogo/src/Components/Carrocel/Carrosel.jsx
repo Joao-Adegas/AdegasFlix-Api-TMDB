@@ -24,14 +24,20 @@ export function Carrosel() {
                 autoplay={{ delay: 3000 }}
                 className="w-[100%] h-[140vh]" // Define o tamanho do carrossel
             >
-                {movies.map((movie) => (
-                    <SwiperSlide key={movie.id}>
-                        <img
-                            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                            alt={movie.title}
-                            className="w-full h-full object-cover shadow-lg opacity-75"
-                        />
-                    </SwiperSlide>
+                {movies
+                //filtra movies que possuem imagens
+                .filter((movie)=> movie.backdrop_path)
+                .map((movie) => (
+                    
+                <SwiperSlide key={movie.id}>
+                    <img
+                        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                        alt={movie.title}
+                        className="w-full h-full object-cover shadow-lg opacity-75"
+                    />
+                </SwiperSlide>
+                 
+
                 ))}
             </Swiper>
         </div>
