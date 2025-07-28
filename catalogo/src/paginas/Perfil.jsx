@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../Components/LoadingSpiner/LoadingSpiner";
 
 const profiles = [
     { id: 1, name: "João", avatar: "src/assets/imagens/avatares/SpidermanAvatar.webp" },
@@ -36,11 +37,7 @@ export function Perfil() {
             {loading ? (
                 
                 <div className="flex flex-col items-center">
-                    <img
-                        src="./src/assets/Loading/loading.gif"
-                        alt="Carregando"
-                        className="md:w-[50vw] md:h-[30vh] lg:w-[50vw] lg:h-[50vh]"
-                    />
+                    <LoadingSpinner/>
                 </div>
             ) : (
                
@@ -83,11 +80,7 @@ export function Perfil() {
                                     )}
                                     {selectedProfile?.id === profile.id && !moveToCorner && (
                                         <div className="flex flex-col items-center justify-center gap-4 mt-6">
-                                            <img
-                                                src="./src/assets/Loading/LoadingPerson2.gif"
-                                                alt="Carregando"
-                                                className="w-[auto] h-[10rem]"
-                                            />
+                                            <LoadingSpinner/>
                                         </div>
                                     )}
                                 </div>

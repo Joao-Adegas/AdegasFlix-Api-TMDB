@@ -1,9 +1,6 @@
 export default function LoadingSpinner() {
     return (
-        <div className="flex items-center justify-center gap-2">
-            <span className="w-4 h-4 bg-red-600 rounded-full animate-bounce delay-75"></span>
-            <span className="w-4 h-4 bg-red-600 rounded-full animate-bounce delay-150"></span>
-            <span className="w-4 h-4 bg-red-600 rounded-full animate-bounce delay-300"></span>
-        </div>
+        <div class="loader border-t-2 rounded-full border-red-900 bg- animate-spin
+        aspect-square w-[4rem] flex justify-center items-center text-yellow-700"></div>
     );
 }

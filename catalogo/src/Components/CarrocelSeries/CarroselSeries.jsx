@@ -17,20 +17,20 @@ export function CarroselSeries() {
 
     return (
         <> 
-            <div className="w-[100%] h-[100%] bg-black flex items-center justify-center ">
+            <div className="bg-black flex items-center justify-center ">
                 <Swiper
                     spaceBetween={30}
                     slidesPerView={1}
                     loop={true}
                     autoplay={{ delay: 1000 }}
-                    className="w-[100%] h-[140vh]" // Define o tamanho do carrossel
+                    className="w-auto h-auto" // Define o tamanho do carrossel
                 >
                     {series.map((serie) => (
                         <SwiperSlide key={serie.id}>
                             <img
                                 src={`https://image.tmdb.org/t/p/original${serie.backdrop_path}`}
                                 alt={serie.title}
-                                className="w-full h-full object-cover shadow-lg opacity-75"
+                                className="w-[100%] h-auto object-cover shadow-lg opacity-75"
                             />
                         </SwiperSlide>
                     ))}

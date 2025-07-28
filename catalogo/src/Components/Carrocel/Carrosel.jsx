@@ -16,13 +16,13 @@ export function Carrosel() {
     }, []);
 
     return (
-        <div className="w-[100%] h-[100%] bg-black flex items-center justify-center relative">
+        <div className="bg-black flex items-center justify-center relative">
             <Swiper
                 spaceBetween={30}
                 slidesPerView={1}
                 loop={true}
                 autoplay={{ delay: 3000 }}
-                className="w-[100%] h-[140vh]" // Define o tamanho do carrossel
+                 className="w-auto h-auto" // Define o tamanho do carrossel
             >
                 {movies
                 //filtra movies que possuem imagens
@@ -33,7 +33,7 @@ export function Carrosel() {
                     <img
                         src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                         alt={movie.title}
-                        className="w-full h-full object-cover shadow-lg opacity-75"
+                        className="w-[100%] h-auto object-cover shadow-lg opacity-75"
                     />
                 </SwiperSlide>
                  
